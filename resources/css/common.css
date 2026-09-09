@@ -14,7 +14,7 @@
 @keyframes circleMove4 { 0% { transform: translate(3rem, -33rem); } 25% { transform: translate(7rem, -43rem); } 50% { transform: translate(12rem, -36rem); } 75% { transform: translate(24rem, -23rem); } 100% { transform: translate(30rem, -47rem); } }
 
 .group-intro {height: calc(100vh - 5.8rem);height: calc(100dvh - 5.8rem);}
-.group-intro.quiz {height: 100%;padding: 4rem 2rem 6rem;} 
+.group-intro.quiz {height: 100%;min-height: 600px;padding: 4rem 2rem 6rem;} 
 .group-intro:first-child {padding: 0;background: transparent;}
 .group-intro .intro-area {position: relative;height: 100%;padding: 6.8rem 2rem 4.8rem;color: #0b2840;}
 .intro-sub-tit {font-size: clamp(2.4rem, 3vw, 3.6rem);line-height: clamp(3.4rem, 3.6vw, 4.6rem);font-weight: 400;}
@@ -68,7 +68,7 @@
 .help .btn-type2::after {display: block;content: '';clear: both;width: 2rem;height: 2rem;background: url(../images/icon_Paste.svg) no-repeat center;background-size: contain;}
 
 /* 인증 서비스 */
-.sc-authentication {padding: 4rem 2rem;background: var(--color-white);}
+.sc-authentication {position: relative;z-index: 2;padding: 4rem 2rem;background: var(--color-white);}
 .group-authentication .main-tit {margin-top: 0.8rem;}
 .authentication-area {display: grid;grid-template-columns: 1fr 1fr;gap: 12px;margin-top: 2.4rem;}
 .card-box .tit {font-size: clamp(1.8rem, 1.5vw + 1rem, 2.4rem);line-height: clamp(2.8rem, 1.5vw + 1rem, 3.2rem);transition: 0.3s ease-out;}
@@ -81,7 +81,8 @@
 
 /* 추천 서비스 */
 .sc-recommand {position: relative;}
-.bg-recommand {position: absolute; top: 0; left: -15%; width: 130%; height: 100%;max-height: 600px;background: url(../images/main-bg03.png) no-repeat center; background-size: cover;}
+.bg-recommand {position: absolute; top: 0; left: -15%; width: 130%; height: 100%;background: url(../images/main-bg03.png) no-repeat center; background-size: cover;}
+.bg-recommand::-webkit-scrollbar {display: none;}
 .group-recommand {padding: 4rem 0;}
 .group-recommand .main-tit {margin-top: 0.8rem;padding-left: 2rem;color: var(--color-white);}
 .group-recommand .main-txt {padding-left: 2rem;color: #B9C9E8;}
@@ -113,7 +114,7 @@
 .procedure-item:nth-child(4) .ico {background: url(../images/ico-step4.svg) no-repeat center;background-size: contain;}
 .procedure-item:nth-child(5) .ico {background: url(../images/ico-step5.svg) no-repeat center;background-size: contain;}
 .procedure-item:nth-child(6) .ico {background: url(../images/ico-step6.svg) no-repeat center;background-size: contain;}
-.procedure-item .num {display: flex;justify-content: center;align-items: center;width: 2.4rem;height: 2.4rem;border-radius: 2.4rem;font-size: 1.2rem;font-weight: 600;background: VAR(--BG-GREY);}
+.procedure-item .num {display: flex;justify-content: center;align-items: center;width: 2.4rem;height: 2.4rem;border-radius: 2.4rem;font-size: 1.2rem;font-weight: 600;background: var(--bg-grey);}
 .procedure-item .txt-box {position: relative;padding-bottom: 2.4rem;}
 .procedure-item .txt-box::before {position: absolute;top: 31px;left: -25px;display: block;content: '';clear: both;width: 2px;height: 26px;background: #e5e7eb;} 
 .procedure-item:last-child .txt-box::before {display: none;}
@@ -138,11 +139,11 @@
 .consulting-area .link-email::before {display: block;content: '';clear: both;width: 2rem;height: 2rem;background: url(../images/ico-email.svg) no-repeat center 3px;background-size: contain;} 
 
 /**** 상세 페이지 ****/
-.breadcrumb {display: flex;align-items: center;gap: 4px;padding: 2.4rem 2rem 0;}
-.breadcrumb a {font-size: clamp(1.4rem, 4vw, 1.6rem);line-height: clamp(2.2rem, 4vw, 2.4rem);color: var(--color-secondary);font-weight: 600;letter-spacing: 0.4px;text-decoration: underline;}
+/* .breadcrumb {display: flex;align-items: center;gap: 4px;padding: 2.4rem 2rem 0;} */
+/* .breadcrumb a {font-size: clamp(1.4rem, 4vw, 1.6rem);line-height: clamp(2.2rem, 4vw, 2.4rem);color: var(--color-secondary);font-weight: 600;letter-spacing: 0.4px;text-decoration: underline;} */
 .verification {position: relative;}
-.verification::before {position: absolute;top: -6rem;left: 0;right: 0;display: block;content: '';clear: both;width: 100%;height: 20%;background: linear-gradient(#EEF9FF, #EBF2FF);z-index: -1;}
-.group-detail {padding: 1.6rem 2rem 0;}
+.verification::before {position: absolute;top: -6rem;left: 0;right: 0;display: block;content: '';clear: both;width: 100%;height: 18%;background: linear-gradient(#EEF9FF, #EBF2FF);z-index: -1;}
+.group-detail {padding: 2.4rem 2rem 0;}
 .tag-box {margin-top: 1.2rem;display: flex;align-items: center;gap: 4px;}
 .tag-box span {padding: 0.2rem 0.8rem;border-radius: var(--radius-full);font-size: clamp(1.4rem, 3vw, 1.6rem);line-height: clamp(2.2rem, 3vw, 2.4rem);color: var(--color-secondary);background: #DEEBFF;}
 .detail-txt {margin-top: 1.6rem;font-size: clamp(1.6rem, 4vw, 1.8rem);line-height: clamp(2.4rem, 4vw, 3.2rem);}
@@ -252,7 +253,7 @@
     .card-box .btn-type2 {align-self: flex-end;width: 12rem;padding: 0;}
 
     /* 추천 서비스 */
-    .group-recommand {max-width: var(--max-pc-width);margin: 0 auto;padding: 12rem 0 12rem 4rem;}
+    .group-recommand {max-width: var(--max-pc-width);margin: 0 auto;padding: 9rem 0 9rem 4rem;}
     .group-recommand .main-txt {font-size: 2.8rem;}
     .recommand-list {gap: 16px;}
     .recommand-item{flex-shrink: 1;height: 347px;padding: 3.2rem 2.4rem;transition: 0.3s ease-in-out;}
@@ -291,9 +292,10 @@
     .consulting-area .link-tel::before, .consulting-area .link-email::before {display: none;}
 
     /**** 상세페이지 ****/
-    .verification::before {top: 0;}
-    .breadcrumb {margin: 0 auto;max-width: 1200px;padding: 12.2rem 4rem 0;}
-    .group-detail {margin: 0 auto;max-width: 1200px;padding: 3.2rem 4rem 0;}
+    .verification {top: 7.2rem;}
+    .verification::before {top: 0;height: 16%;}
+    /* .breadcrumb {margin: 0 auto;max-width: 1200px;padding: 12.2rem 4rem 0;} */
+    .group-detail {margin: 0 auto;max-width: 1200px;padding: 5.2rem 4rem 0;}
     .detail-txt br {display: block;}
     .group-service1 .service-tit {margin: 0 auto;max-width: 1200px;padding: 2rem 4rem 0;}
     .group-service2 {margin: 0 auto;max-width: 1200px;padding: 12rem 4rem 0;}
@@ -310,7 +312,7 @@
     .group-info-input {margin: 0 auto;max-width: 1200px;padding: 12rem 4rem;}
     .group-cidi {margin: 0 auto;padding: 10rem 4rem;}
     .group-cidi .service-tit {margin: 0 auto;max-width: 1200px;}
-    .group-cidi .service-txt {display: none;}
+    .group-cidi .service-txt {margin: 2rem auto 0;max-width: 1200px;font-size: 1.8rem;}
     .cidi-area {margin: 2rem auto 0;max-width: 1200px;}
     .cidi-box {padding: 2.8rem;min-height: 142px;}
     .group-contact {padding: 0;background: #1d3259;color: var(--color-white);}
