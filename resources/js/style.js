@@ -2,6 +2,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 document.addEventListener('DOMContentLoaded', function () {
 
+
     // intro fade in
     const tl = gsap.timeline({
         defaults: {
@@ -81,9 +82,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const authSection = document.querySelector('.sc-authentication');
 
     if (authSection) {
-        titleAnimation(authSection);
+        const tl = titleAnimation(authSection);
+        
+        tl.from('.authentication-area', {
+            //y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power1.out'
+        }, '-=0.2');
     }
-
 
     // 버튼 호버 효과
     // const authBoxes = document.querySelectorAll('.card-box');
