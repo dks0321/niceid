@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // intro fade in
+    const mm = gsap.matchMedia();
+
+mm.add('(min-width: 769px)', () => {
+
     const tl = gsap.timeline({
         defaults: {
             duration: 1,
@@ -24,21 +28,77 @@ document.addEventListener('DOMContentLoaded', function () {
         y: 20,
         opacity: 0
     })
-        .from('.intro-tit', {
-            y: 20,
-            opacity: 0
-        }, '-=0.3')
-        .from('.sc-intro .quiz', {
-            y: 20,
-            opacity: 0
-        }, '<')
-        .from('.intro-txt', {
-            y: 20,
-            opacity: 0
-        }, '<')
-        .from('.strength-list', {
-            opacity: 0,
-        }, '-=0.3');
+    .from('.intro-tit', {
+        y: 20,
+        opacity: 0
+    }, '-=0.3')
+    .from('.group-intro.quiz', {
+        y: 20,
+        opacity: 0
+    }, '<')
+    .from('.intro-txt', {
+        y: 20,
+        opacity: 0
+    }, '<')
+    .from('.strength-list', {
+        opacity: 0
+    }, '-=0.3');
+
+});
+
+
+mm.add('(max-width: 768px)', () => {
+
+    const tl = gsap.timeline({
+        defaults: {
+            duration: 0.7,
+            ease: 'power1.out'
+        }
+    });
+
+    tl.from('.intro-sub-tit', {
+        y: 15,
+        opacity: 0
+    })
+    .from('.intro-tit', {
+        y: 15,
+        opacity: 0
+    }, '-=0.2')
+    .from('.intro-txt', {
+        y: 15,
+        opacity: 0
+    }, '<')
+    .from('.strength-list', {
+        opacity: 0
+    }, '-=0.2');
+
+});
+    // const tl = gsap.timeline({
+    //     defaults: {
+    //         duration: 1,
+    //         ease: 'power1.out'
+    //     }
+    // });
+
+    // tl.from('.intro-sub-tit', {
+    //     y: 20,
+    //     opacity: 0
+    // })
+    //     .from('.intro-tit', {
+    //         y: 20,
+    //         opacity: 0
+    //     }, '-=0.3')
+    //     .from('.sc-intro .quiz', {
+    //         y: 20,
+    //         opacity: 0
+    //     }, '<')
+    //     .from('.intro-txt', {
+    //         y: 20,
+    //         opacity: 0
+    //     }, '<')
+    //     .from('.strength-list', {
+    //         opacity: 0,
+    //     }, '-=0.3');
 
 
     // 타이틀 공통 애니메이션
@@ -47,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const mainTit = section.querySelector('.main-tit');
     
         // 모바일
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768) { 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: section,
