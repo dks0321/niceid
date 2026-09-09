@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE아이디 - 서비스 소개 - NICE 평가정보</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../resources/css/font/font.css">
+    <link rel="stylesheet" href="../resources/css/base.css">
+    <link rel="stylesheet" href="../resources/css/layout.css">
+    <link rel="stylesheet" href="../resources/css/common.css">
+
+    <!-- js -->
+    <script src="../resources/js/gsap.min.js"></script>
+    <script src="../resources/js/gsap.plugins.min.js"></script>
+    <script src="../resources/js/quiz.js"></script>
+    <script src="../resources/js/style.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!-- 접근성 nav -->
+        <div class="nav-skip">
+            <a href="#container" tabindex="0">본문 바로가기</a>
+            <a href="#gnb" tabindex="0">메인메뉴 바로가기</a>
+            <a href="#footer" tabindex="0">풋터 바로가기</a>
+        </div>
+
+        <!-- s :: pc header -->
+        <header class="pc-header">
+            <h1 class="logo"><a href="#"><img src="../resources/images/logo.svg" alt="NICE아이디"></a></h1>
+            <nav class="pc-nav">
+                <ul id="gnb" class="nav-list">
+                    <li class="nav-item">
+                        <button type="button" class="btn-depth1">본인확인</button>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">휴대폰 본인확인</a></li>
+                            <li class="menu-item"><a href="#">아이핀</a></li>
+                            <li class="menu-item"><a href="#">공동인증서</a></li>
+                            <li class="menu-item"><a href="#">금융인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn-depth1">정보 진위 확인</button>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">실명확인(내/외국인)</a></li>
+                            <li class="menu-item"><a href="#">법인실명확인</a></li>
+                            <li class="menu-item"><a href="#">계좌확인</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn-depth1">소지/점유 확인</button>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">계좌1원인증</a></li>
+                            <li class="menu-item"><a href="#">MO인증</a></li>
+                            <li class="menu-item"><a href="#">문자OTP인증</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn-depth1">기타 인증</button>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">CI/DI 변환</a></li>
+                            <li class="menu-item"><a href="#">신분증안심패키지</a></li>
+                            <li class="menu-item"><a href="#">PASS인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn-depth1">고객 지원</button>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">실명 및 사업자 등록</a></li>
+                            <li class="menu-item"><a href="#">문의처 정보</a></li>
+                            <li class="menu-item"><a href="#">도입절차</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- e :: pc header -->
+
+        <!-- s :: mo header -->
+        <header class="mo-header">
+            <h1 class="logo"><a href="#"><img src="../resources/images/logo.svg" alt="NICE아이디"></a></h1>
+            <button class="btn-menu" data-modal-open="mobile-menu"
+                aria-label="메뉴"><span></span><span></span><span></span></button>
+            <nav data-modal="mobile-menu" class="mo-nav" aria-label="주메뉴">
+                <ul id="gnb" class="nav-list">
+                    <li class="nav-item">
+                        <p class="depth-tit">본인확인</p>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">휴대폰 본인확인</a></li>
+                            <li class="menu-item"><a href="#">아이핀</a></li>
+                            <li class="menu-item"><a href="#">공동인증서</a></li>
+                            <li class="menu-item"><a href="#">금융인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <p class="depth-tit">정보 진위 확인</p>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">실명확인(내/외국인)</a></li>
+                            <li class="menu-item"><a href="#">법인실명확인</a></li>
+                            <li class="menu-item"><a href="#">계좌확인</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <p class="depth-tit">소지/점유 확인</p>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">계좌1원인증</a></li>
+                            <li class="menu-item"><a href="#">MO인증</a></li>
+                            <li class="menu-item"><a href="#">문자OTP인증</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <p class="depth-tit">기타 인증</p>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">CI/DI 변환</a></li>
+                            <li class="menu-item"><a href="#">신분증안심패키지</a></li>
+                            <li class="menu-item"><a href="#">PASS인증서</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <p class="depth-tit">고객 지원</p>
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="#">실명 및 사업자 등록</a></li>
+                            <li class="menu-item"><a href="#">문의처 정보</a></li>
+                            <li class="menu-item"><a href="#">도입절차</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- e :: mo header -->
+
+        <!-- s :: content -->
+        <main id="container" class="content-wrap">
+            <div class="sc-all-service">
+                <div class="group-subpg-top">
+                    <nav class="breadcrumb">
+                        <a href="#">메인화면</a>
+                        <span>&lt;</span>
+                        <a href="#">전체서비스</a>
+                    </nav>
+                    <div class="subpg-top-area">
+                        <div class="lt">
+                            <p class="subpg-top-txt">서비스 소개</p>
+                            <h2 class="subpg-top-tit"></h2>
+                        </div>
+                        <div class="rt">
+                            <img src="../resources/images/card-illustration.svg" alt="" aria-hidden="true">
+                            <button type="button">전체소개서</button>
+                        </div>
+                    </div>
+                    <div class="service-tab-area">
+                        <button type="button" class="btn-servcie">본인확인</button>
+                        <button type="button" class="btn-servcie">정보 진위 확인</button>
+                        <button type="button" class="btn-servcie">소지/점유 확인</button>
+                        <button type="button" class="btn-servcie">기타인증</button>
+                    </div>
+                </div>
+                <div class="group-service-cnt">
+                    <div class="service-cnt-area">
+                        <h3 class="service-cnt-tit"></h3>
+                        <p class="serviec-cnt-txt"></p>
+                        <ul class="service-list">
+                            <li class="service-item">
+                                <h4 class="tit"></h4>
+                                <div class="tag-box">
+                                    
+                                </div>
+                                <a href="#" class="link-service "></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- e :: content -->
+
+        <!-- s :: footer -->
+        <footer id="footer">
+            <div class="footer-menu">
+                <a href="#" class="link-menu">이용약관</a>
+                <a href="#" class="link-menu"><b>개인정보처리방침</b></a>
+                <a href="#" class="link-menu">공지사항</a>
+            </div>
+            <div class="group-footer">
+                <div class="tel-box">
+                    <a href="tel:02-3771-1588">계약 문의 : <b>02-3771-1588</b></a> &nbsp;/&nbsp;
+                    <a href="tel:1600-1587">고객센터 Tel : <b>1600-1587</b></a>
+                </div>
+                <p class="company-info"> (07237)서울시 영등포구 은행로 17 (여의도동 14-33) NICE평가정보㈜ 대표 김종윤 | 사업자등록번호 116-81-15020 |
+                    통신판매업신고2024-서울영등포-1095호 | Email : niceid@nice.co.kr 고객센터 주소 : 서울시 영등포구 은행로 30 중소기업중앙회 신관 6층 NICE평가정보
+                    <b>㈜</b>
+                </p>
+                <p>Copyright ⓒ NICE Information Service. All rights reserved.</p>
+            </div>
+
+        </footer>
+        <!-- e :: footer -->
+    </div>
+</body>
+
+</html>
