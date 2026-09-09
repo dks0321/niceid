@@ -627,6 +627,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* 시작 */
-    renderQuestion('q1');
+    renderQuestion();
 
 }); //js
