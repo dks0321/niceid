@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             y: 20,
             opacity: 0
         }, '-=0.3')
-        .from('.sc-intro.quiz', {
+        .from('.sc-intro .quiz', {
             y: 20,
             opacity: 0
         }, '<')
