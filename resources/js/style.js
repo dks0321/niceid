@@ -1,6 +1,15 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+
+// 브라우저의 자동 스크롤 위치 복원 방지
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+
+    // 페이지 로드 시 최상단
+    window.scrollTo(0, 0);
 
 
     // intro fade in
@@ -34,23 +43,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 타이틀 공통 애니메이션
     function titleAnimation(section) {
-
-        const mainTxt = SplitText.create(
-            section.querySelector('.main-txt'),
-            {
-                type: 'words,lines',
-                mask: 'words'
-            }
-        );
-
-        const mainTit = SplitText.create(
-            section.querySelector('.main-tit'),
-            {
-                type: 'words,lines',
-                mask: 'words'
-            }
-        );
-
+        const mainTxt = section.querySelector('.main-txt');
+        const mainTit = section.querySelector('.main-tit');
+    
+        // 모바일
+        if (window.innerWidth < 768) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+    
+            tl.from([mainTxt, mainTit], {
+                y: 20,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+    
+            return tl;
+        }
+    
+        // PC
+        const splitTxt = SplitText.create(mainTxt, {
+            type: 'words,lines',
+            mask: 'words'
+        });
+    
+        const splitTit = SplitText.create(mainTit, {
+            type: 'words,lines',
+            mask: 'words'
+        });
+    
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
@@ -58,22 +85,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 toggleActions: 'play none none reverse'
             }
         });
-
-        tl.from(mainTxt.words, {
+    
+        tl.from(splitTxt.words, {
             yPercent: 100,
             opacity: 0,
             stagger: 0.05,
             duration: 0.6,
             ease: 'power2.out'
         })
-            .from(mainTit.words, {
-                yPercent: 100,
-                opacity: 0,
-                stagger: 0.05,
-                duration: 0.7,
-                ease: 'power2.out'
-            }, '-=0.2');
-
+        .from(splitTit.words, {
+            yPercent: 100,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 0.7,
+            ease: 'power2.out'
+        }, '-=0.2');
+    
         return tl;
     }
 
